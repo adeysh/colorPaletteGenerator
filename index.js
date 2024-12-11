@@ -34,13 +34,24 @@ function addColorsToPalette() {
     });
 }
 
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.innerText = message;
+    toast.className = 'toast';
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.remove();
+    }, 2000);
+}
+
 function copyText(event) {
     if (event.target.classList.contains("hexCode")) {
         try {
             navigator.clipboard.writeText(event.target.innerText);
-            alert("Copied to Clipboard: " + event.target.innerText);
+            showToast(`Copied: ${event.target.innerText}`);
         } catch (error) {
-            alert('Error Copying to Clipboard!');
+            showToast("Error Copying to Clipboard!");
         }
     }
 }
