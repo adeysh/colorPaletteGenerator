@@ -27,19 +27,15 @@ function generateRndColor() {
 }
 
 function addColorsToPalette() {
-    colorBoxEl.forEach(colorBox => {
+    colorBoxEl.forEach((colorBox, index) => {
         const color = generateRndColor();
         colorBox.style.backgroundColor = color.rgbColor;
-    });
-
-    colorTagEl.forEach(colorTag => {
-        const color = generateRndColor();
-        colorTag.innerText = color.hexColor;
+        colorTagEl[index].innerText = color.hexColor;
     });
 }
 
 function copyText(event) {
-    if (event.target.class = "hexCode") {
+    if (event.target.classList.contains("hexCode")) {
         try {
             navigator.clipboard.writeText(event.target.innerText);
             alert("Copied to Clipboard: " + event.target.innerText);
