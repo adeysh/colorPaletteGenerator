@@ -11,7 +11,6 @@ body {
     font-family: "Poppins", serif;
     font-weight: 400;
     font-style: normal;
-    background-color: #780000;
 }
 
 .header {
@@ -93,4 +92,24 @@ body {
     position: absolute;
     border-radius: 10px;
     display: none;
+}
+
+@media (max-width: 500px) {
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .generate_colors_button {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 450px) {
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .generate_colors_button {
+        font-size: 20px;
+    }
 }
